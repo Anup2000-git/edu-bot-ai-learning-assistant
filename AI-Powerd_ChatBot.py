@@ -14,7 +14,7 @@ import google.generativeai as genai
 model = SentenceTransformer('sentence-transformers/all-MiniLM-L6-v2')
 
 # Set Gemini API key here
-GEMINI_API_KEY = 'AIzaSyDaoMJXZsSmHzgmXAfTctQU5u_UzmABG3g'  
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 genai.configure(api_key=GEMINI_API_KEY)
 
 # Load the Gemini model

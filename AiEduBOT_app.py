@@ -1,3 +1,4 @@
+import os
 import pandas as pd
 import streamlit as st
 import faiss
@@ -15,10 +16,10 @@ from urllib.parse import quote
 EMBEDDING_MODEL_NAME = "sentence-transformers/all-MiniLM-L6-v2"
 FAISS_INDEX_PATH = r"D:\\360DigitMG\\Project - 2\\ChatBot Code\\vector_database.index"
 DOCUMENTS_PATH = r"D:\\360DigitMG\\Project - 2\\ChatBot Code\\metadata.json"
-GEMINI_API_KEY = "AIzaSyDaoMJXZsSmHzgmXAfTctQU5u_UzmABG3g"
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 LOGO_PATH = r"D:\\360DigitMG\\Project - 2\\ChatBot Code\\AiSPRY logo.jpg"
-DB_USER = "root"
-DB_PASSWORD = "root"
+DB_USER = os.getenv("DB_USER", "root")
+DB_PASSWORD = os.getenv("DB_PASSWORD", "")
 DB_NAME = "ai_chatbot"
 
 
